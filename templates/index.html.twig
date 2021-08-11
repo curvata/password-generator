@@ -1,0 +1,100 @@
+{% extends "base.html.twig" %}
+{% block body %}
+ <div id="modal" class="modal">
+    <div class="modal_content">
+      <span class="close">X</span>
+      <p class="mdp_content"></p>
+    </div>
+</div>
+<div class="container">
+    <header>
+        <div class="side_logo">
+            <div class="one"></div>
+            <div class="two"></div>
+        </div>
+        <div class="logo">
+            <img src="{{ asset('images/apipassword.jpg') }}">
+        </div>
+        <div class="side_logo">
+            <div class="one"></div>
+            <div class="two"></div>
+        </div>
+    </header>
+    <section class="generator">
+        <div class="form">
+            <div class="title">
+                <h2>GENERATOR</h2>
+                <p>Configurer et générer un mot de passe</p>
+            </div>
+            <form>
+                <label for="range1">length</label>
+                <input step="1" min="5" max="32" placeholder="Min=5 & Max=32" value="5" type="number" name="length">
+            
+                <label for="range2">many</label>
+                <input step="1" min="1" max="10" placeholder="Min=1 & Max=10" value="1" type="number" name="many">
+            
+                <label for="range3">int</label>
+                <input step="1" min="0" max="32" placeholder="Min=1 & Max=32" value="0" type="number" name="int">
+            
+                <label for="range4">upper</label>
+                <input step="1" min="0" max="32" placeholder="Min=1 & Max=32" value="0" type="number" name="upper">
+            
+                <label for="range5">symbol</label>
+                <input step="1" min="0" max="32" placeholder="Min=1 & Max=32" value="0" type="number" name="symbol">
+                <button class="btn" id="generate">Générer</button>        
+            </form> 
+        </div>
+        <div class="illu">                    
+            <img src="{{ asset('./images/img01.png') }}">
+        </div>
+    </section>
+    <section class="doc">
+        <div class="illu">
+            <img src="{{ asset('./images/img02.png') }}">
+        </div>
+        <div class="grid">
+            <div class="title">
+                <h2>CONFIGURATION API</h2>
+                <p>https://password-generator.menezes.be/api/v1/generate</p>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>length</th>
+                        <td>Longueur du mot de passe</td>
+                        <td>min=5, max=32, defaut=5</td>
+                    </tr>
+                    <tr>
+                        <th>many</th>
+                        <td>Nombre de mots de passe</td>
+                        <td>min=1, max=20, defaut=1</td>
+                    </tr>
+                    <tr>
+                        <th>int</th>
+                        <td>Nombre de chiffres</td>
+                        <td>min=0, max=32, defaut=0</td>
+                    </tr>
+                    <tr>
+                        <th>upper</th>
+                        <td>Nombre de majuscules</td>
+                        <td>min=0, max=32, defaut=0</td>
+                    </tr>
+                    <tr>
+                        <th>symbol</th>
+                        <td>Nombre de symboles</td>
+                        <td>min=0, max=32, defaut=0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+<footer>
+    <div class="container">
+        <div class="footer_content">
+            <p>Développé par <a href="https://menezes.be">Menezes</a></p>
+            <a class="social" href="https://github.com/curvata/password-generator"><img src="{{ asset('images/github.png') }}"></a>
+        </div>
+    </div>
+</footer>
+{% endblock %}
